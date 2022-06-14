@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useQuery } from "@apollo/client";
-import { IHardware } from "../../src/interfaces";
-import { HARDWARES, PRODUCT_BY_SLUG } from "../../src/gql/query";
+import { IClothing } from "../../src/interfaces";
+import { CLOTHINGS, PRODUCT_BY_SLUG } from "../../src/gql/query";
 import { client } from "../../src/apollo";
 import { Spinner01, ProductOverviews05 } from "../../components/Components";
 import { Layout } from "../../components/Layout";
@@ -21,8 +21,8 @@ const SlugPage: NextPage<SlugPage> = ({ slug }) => {
 			title={"- Detalles"}
 			pageDescription={"Detalles de los productos"}
 		>
-      <Heading01 category={`${data.hardwareBySlug.category}`} section={`${data.hardwareBySlug.section}`} item={`${data.hardwareBySlug.item}`} name={`${data.hardwareBySlug.name}`}/>
-			<ProductOverviews05 product={data.hardwareBySlug} />
+      <Heading01 category={`${data.clothingBySlug.category}`} section={`${data.clothingBySlug.section}`} item={`${data.clothingBySlug.item}`} name={`${data.clothingBySlug.name}`}/>
+			<ProductOverviews05 product={data.clothingBySlug} />
 		</Layout>
 	);
 };
@@ -38,9 +38,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
 	const { data } = await client.query({
-		query: HARDWARES
+		query: CLOTHINGS
 	});
-	const paths = data.hardwares.map((data: IHardware) => ({
+	const paths = data.clothings.map((data: IClothing) => ({
 		params: { slug: data.slug }
 	}));
 	return {

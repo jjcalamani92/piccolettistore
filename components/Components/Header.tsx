@@ -8,7 +8,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export const HeaderHardware = () => {
+export const Header = () => {
   const { site, toggleSideSearch, toggleSideCart } = useContext(UiContext)
   const { user, isLoggedIn, logout } = useContext(AuthContext);
 
@@ -17,7 +17,7 @@ export const HeaderHardware = () => {
     <div className="bg-white">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
+        <Dialog as="div" className="relative z-50 lg:hidden" onClose={setOpen}>
           <Transition.Child
             as={Fragment}
             enter="transition-opacity ease-linear duration-300"
@@ -61,7 +61,7 @@ export const HeaderHardware = () => {
                           key={category.name}
                           className={({ selected }) =>
                             classNames(
-                              selected ? 'text-orange-600 border-orange-600' : 'text-gray-900 border-transparent',
+                              selected ? 'text-red-600 border-red-600' : 'text-gray-900 border-transparent',
                               'flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium capitalize'
                             )
                           }
@@ -191,7 +191,7 @@ export const HeaderHardware = () => {
       </Transition.Root>
 
       <header className="relative bg-white">
-        <p className="bg-orange-600 h-10 flex items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
+        <p className="bg-red-600 h-10 flex items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
           Obtenga envío gratuito en pedidos superiores a $ 100
         </p>
 
@@ -232,7 +232,7 @@ export const HeaderHardware = () => {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? 'border-orange-600 text-orange-600'
+                                  ? 'border-red-600 text-red-600'
                                   : 'border-transparent text-gray-700 hover:text-gray-800',
                                 'relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px capitalize'
                               )}

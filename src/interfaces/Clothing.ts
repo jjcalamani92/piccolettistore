@@ -1,10 +1,11 @@
-export interface IHardware {
+export interface IClothing {
 	_id: string;
 	name: string;
 	brand: string;
 	image: string[];
 	description: string;
 	inStock: number;
+	sizes: string[];
 	slug: string;
 	category: string;
 	section: string;

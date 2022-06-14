@@ -2,13 +2,13 @@ import Image from "next/image";
 import { useRouter } from 'next/router';
 import Link from "next/link";
 import React, { FC, useState } from "react";
-import { IHardware } from "../../src/interfaces";
+import { IClothing } from "../../src/interfaces";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faCircleMinus } from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 
 interface Props {
-  products: IHardware[];
+  products: IClothing[];
 }
 
 

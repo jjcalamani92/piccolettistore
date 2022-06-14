@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
-import { IHardware } from "../../../../src/interfaces";
+import { IClothing } from "../../../../src/interfaces";
 import { useQuery } from "@apollo/client";
 import { client } from "../../../../src/apollo";
 import React, { Component } from "react";
@@ -28,7 +28,7 @@ const ItemPage = () => {
         pageDescription='{re.name}'
     >
       <Heading01 category={`${category}`} section={`${section}` } item={`${item}` } />
-      <LayoutProductlist01 products={data.hardwareByCategoryAndSectionAndItem} />
+      <LayoutProductlist01 products={data.clothingByCategoryAndSectionAndItem} />
     </Layout>
     </>
   );
@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 		query: ITEM,
     variables: { site: `${process.env.API_SITE}`},
 	});
-  const paths = data.hardwareAll.map((data:IHardware) => ({
+  const paths = data.clothingAll.map((data:IClothing) => ({
     params: { category: data.category, section: data.section, item: data.item }
   })
   )

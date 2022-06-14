@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
-import { IHardware, } from "../../src/interfaces";
+import { IClothing, } from "../../src/interfaces";
 import { CATEGORY } from "../../src/gql/query";
 import { client } from "../../src/apollo";
 import { Category} from '../../src/interfaces/Site';
@@ -47,7 +47,7 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 		query: CATEGORY,
     variables: { site: `${process.env.API_SITE}`},
 	});
-	const paths = data.hardwareAll.map((data:IHardware) => ({
+	const paths = data.clothingAll.map((data:IClothing) => ({
     params: { category: data.category}
   }))
 	return {

@@ -25,7 +25,7 @@ export const Login = () => {
 	return (
 		<form
 			onSubmit={handleSubmit(onLoginSubmit)}
-			className="h-screen flex bg-gray-100 from-green-400 to-orange-900 w-full py-16 px-4"
+			className="h-screen flex bg-gray-100 from-green-400 to-red-900 w-full py-16 px-4"
 		>
 			<div className="flex flex-col items-center justify-center w-full">
 				<div className="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-auto  p-10">
@@ -84,7 +84,7 @@ export const Login = () => {
 							})}
 						/>
 						<div>
-							{errors.email && <span className="text-sm text-orange-500">{errors.email.message}</span>}
+							{errors.email && <span className="text-sm text-red-500">{errors.email.message}</span>}
 						</div>
 					</div>
 					<div className="mt-6  w-full">
@@ -117,13 +117,13 @@ export const Login = () => {
 							</div>
 						</div>
 						<div>
-							{errors.password && <span className="text-sm text-orange-500">{errors.password.message}</span>}
+							{errors.password && <span className="text-sm text-red-500">{errors.password.message}</span>}
 						</div>
 
 						{
 							showError
 								?
-								<div className="text-sm text-orange-500 pt-4">
+								<div className="text-sm text-red-500 pt-4">
 									No se reconoce el usuario!!
 								</div>
 								:
@@ -136,7 +136,7 @@ export const Login = () => {
 						<button
 							type="submit"
 							aria-label="create my account"
-							className="focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 text-sm font-semibold leading-none text-white focus:outline-none bg-orange-600 border rounded hover:bg-orange-700 py-4 w-full"
+							className="focus:ring-2 focus:ring-offset-2 focus:ring-red-600 text-sm font-semibold leading-none text-white focus:outline-none bg-red-600 border rounded hover:bg-red-700 py-4 w-full"
 						>
 							Login
 						</button>

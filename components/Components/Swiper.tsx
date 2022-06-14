@@ -7,7 +7,7 @@ import { Autoplay, Navigation, Pagination, Thumbs } from "swiper";
 import Image from "next/image";
 
 // interface Props {
-// 	products: IProduct[];
+// 	products: IClothing[];
 // }
 interface Props1 {
 	homes: any;

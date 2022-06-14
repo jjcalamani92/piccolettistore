@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { FC, useContext } from "react";
 import { UiContext } from "../../src/context";
-import { Footer01, HeaderHardware, Search01 } from "../Components";
+import { Footer01, Header, Search01 } from "../Components";
 
 interface Props {
 	title: string;
@@ -30,7 +30,7 @@ export const Layout: FC<Props> = ({
 				{imageFullUrl && <meta property="og:image" content={imageFullUrl} />}
 			</Head>
 			{/* <HeaderWear /> */}
-			<HeaderHardware />
+			<Header />
 			<Search01 />
 			<main>{children}</main>
       <Footer01 />

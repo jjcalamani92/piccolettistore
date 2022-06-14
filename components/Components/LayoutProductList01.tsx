@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { IHardware } from "../../src/interfaces";
+import { IClothing } from "../../src/interfaces";
 import Link from "next/link";
 
 interface Props {
-	products: IHardware[];
+	products: IClothing[];
 }
 
 export const LayoutProductlist01: FC<Props> = ({ products }) => {

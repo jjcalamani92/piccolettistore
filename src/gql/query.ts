@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const PRODUCTS = gql`
-	query HardwareAll($site: String!) {
-		hardwareAll(site: $site) {
+	query ClothingAll($site: String!) {
+		clothingAll(site: $site) {
 			name
 			image
 			price
@@ -16,23 +16,23 @@ export const PRODUCTS = gql`
 `;
 
 export const CATEGORY = gql`
-	query HardwareAll($site: String!) {
-		hardwareAll(site: $site) {
+	query ClothingAll($site: String!) {
+		clothingAll(site: $site) {
 			category
 		}
 	}
 `;
 export const SECTION = gql`
-	query HardwareAll($site: String!) {
-		hardwareAll(site: $site) {
+	query ClothingAll($site: String!) {
+		clothingAll(site: $site) {
 			category
 			section
 		}
 	}
 `;
 export const ITEM = gql`
-	query HardwareAll($site: String!) {
-		hardwareAll(site: $site) {
+	query ClothingAll($site: String!) {
+		clothingAll(site: $site) {
 			category
 			section
 			item
@@ -40,9 +40,9 @@ export const ITEM = gql`
 	}
 `;
 
-export const HARDWARES = gql`
-	query Hardwares {
-		hardwares {
+export const CLOTHINGS = gql`
+	query Clothings {
+		clothings {
 			_id
 			name
 			brand
@@ -61,8 +61,8 @@ export const HARDWARES = gql`
 `;
 
 export const PRODUCTS_BY_ITEM = gql`
-	query HardwareByCategoryAndSectionAndItem($category: String!, $section: String!, $item: String!, $site: String!) {
-		hardwareByCategoryAndSectionAndItem(category: $category, section: $section, item: $item, site: $site) {
+	query ClothingByCategoryAndSectionAndItem($category: String!, $section: String!, $item: String!, $site: String!) {
+		clothingByCategoryAndSectionAndItem(category: $category, section: $section, item: $item, site: $site) {
 			name
 			price
 			image
@@ -71,8 +71,8 @@ export const PRODUCTS_BY_ITEM = gql`
 	}
 `;
 export const PRODUCTS_BY_SECTION = gql`
-	query HardwareByCategoryAndSectionAndItem($category: String!, $section: String!, $item: String!, $site: String!) {
-		hardwareByCategoryAndSectionAndItem(category: $category, section: $section, item: $item, site: $site) {
+	query ClothingByCategoryAndSectionAndItem($category: String!, $section: String!, $item: String!, $site: String!) {
+		clothingByCategoryAndSectionAndItem(category: $category, section: $section, item: $item, site: $site) {
 			name
 			price
 			image
@@ -82,8 +82,8 @@ export const PRODUCTS_BY_SECTION = gql`
 `;
 
 export const PRODUCT_BY_SLUG = gql`
-	query HardwareBySlug($slug: String!, $site: String!) {
-		hardwareBySlug(slug: $slug, site: $site) {
+	query ClothingBySlug($slug: String!, $site: String!) {
+		clothingBySlug(slug: $slug, site: $site) {
 			_id
 			name
 			brand
@@ -102,8 +102,8 @@ export const PRODUCT_BY_SLUG = gql`
 `;
 
 export const PRODUCT_ALL = gql`
-	query HardwaresAll($limit: Float!, $offset:Float!, $site: String!) {
-		hardwaresAll(input:  { limit: $limit, offset: $offset}, site:$site ) {
+	query ClothingsAll($limit: Float!, $offset:Float!, $site: String!) {
+		clothingsAll(input:  { limit: $limit, offset: $offset}, site:$site ) {
 			_id
 			name
 			brand
